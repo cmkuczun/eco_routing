@@ -1,3 +1,14 @@
+/* Graph.h
+ * This is the Graph struct that will be utilized in our program.
+ * Creators: Claudia Kuczun, Dani Nah, Sam Webster
+ * Date created: April 11, 2022
+ *
+ * Originally provided to us by:
+ *    Author: Matthew Morrison
+ *    Email: matt.morrison@nd.edu
+ */
+
+
 #ifndef GRAPH_H
 #define GRAPH_H
 
@@ -21,79 +32,7 @@ struct Graph{
 	private:
 	
 		VECTOR< Vertex< T > > vertices;	// Adjacency List
-		
-		// Private DFS method
-		bool DFS( unsigned int destin, unsigned int vertVal, VECTOR<unsigned int>& parents, VECTOR<bool>& visited ){
-				
-			if( !visited[ vertVal ] ){
-				
-				// Set the visited edges to true
-				visited[ vertVal ] = true;
-				
-				// Check each outgoing edge 
-				for( unsigned int iter = 0; iter < vertices[ vertVal ].num_edges(); iter++ ){
-					
-					// Obtain a temporary copy of the Edge
-					Edge tempEdge = vertices[ vertVal ].get_edge( iter );
-					
-					// If the destination has not been visited, make recursive call
-					if( !visited[ tempEdge.destin ] ){
-						
-						// Set the destination's parent to vertVal
-						parents[ tempEdge.destin ] = vertVal;
-						
-						// If we found the vertex, return true
-						if( tempEdge.destin == destin ){
-							
-							return true;
-						}
-						
-						// Otherwise, recursively call the destination vertex
-						bool check = DFS( destin, tempEdge.destin, parents, visited );
-						
-						// Recursively return true if check is true
-						if( check ){
-							
-							return true;
-						}
-					}
-					
-				}
-			}
-			
-			// Otherwise, return false
-			return false;
-				
-		}
-		
-		// Private DFS method
-		void TopSort( unsigned int vertVal, VECTOR<unsigned int>& parents, VECTOR<bool>& visited ){
-				
-			if( !visited[ vertVal ] ){
-				
-				// Set the visited edges to true
-				visited[ vertVal ] = true;
-				
-				// Check each outgoing edge 
-				for( unsigned int iter = 0; iter < vertices[ vertVal ].num_edges(); iter++ ){
-					
-					// Obtain a temporary copy of the Edge
-					Edge tempEdge = vertices[ vertVal ].get_edge( iter );
-					
-					// If the destination has not been visited, make recursive call
-					if( !visited[ tempEdge.destin ] ){
-						
-						// Set the destination's parent to vertVal
-						parents[ tempEdge.destin ] = vertVal;
-						
-						// Otherwise, recursively call the destination vertex
-						TopSort( tempEdge.destin, parents, visited );
-						
-					}
-				}
-			}
-		}
-		
+	
 	public:
 		// Constructor
 		Graph( ) : vertices() {}

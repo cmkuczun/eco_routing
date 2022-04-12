@@ -1,3 +1,14 @@
+/* Vertex.h
+ * This is the Vertex struct that will be utilized in our program.
+ * Creators: Claudia Kuczun, Dani Nah, Sam Webster
+ * Date created: April 11, 2022
+ *
+ * Originally provided to us by:
+ *    Author: Matthew Morrison
+ *    Email: matt.morrison@nd.edu
+ */
+
+
 #ifndef VERTEX_H
 #define VERTEX_H
 
