@@ -146,3 +146,62 @@ struct Graph{
 				}
 			}
 		}
+
+		// Check if the value given is already in the graph (so we don't add duplicate vertices)
+		bool check_val(Graph<T>& theGraph, T val){
+
+		  bool check = true;
+
+		  for (size_t i = 0; i < theGraph.vertices.size(); i++) {
+		    if (theGraph.vertices.at(i).get_vertex_value() == val) {
+		      check = false;
+		    }
+		  }
+		  return check;
+		}
+
+		// A function to create our graph given an vector of inputs
+		void create_graph( VECTOR< VECTOR<T> >& routes, Graph<T>& theGraph){
+
+		  // Add all of the vertices (making sure we check that there are no duplicate vertices)
+		  for (int i = 0; i < routes.size(); i++) {
+		    for (int j = 0; j < routes[i].size(); j++) {
+		      if (theGraph.check_val(theGraph, routes[i][j]) == true) {
+		        theGraph.add_vertex( routes[i][j] );
+		      }
+		    }
+		  }
+
+		  // Add edges
+		  for (int k = 0; k < routes.size(); k++) {
+		    for (int m = 0; m < routes[k].size()-1; m++) {
+
+					// Get the index of the value
+		      unsigned int destin = get_index(routes[k][m+1]);
+		      unsigned int origin = get_index(routes[k][m]);
+
+					// Check if it is already in adjacency list
+					for (unsigned int i = 0; i < theGraph.vertices.size(); i++) {
+						if (theGraph.vertices[origin].check_edge_destin(destin) == false) {
+							theGraph.add_edge(origin, destin, 1);
+						}
+					}
+
+
+		    }
+		   }
+
+		}
+
+		// Get vertex index from vertex data
+		unsigned int get_index(T val) const{
+
+			unsigned int index = 0;
+
+			for (unsigned int i = 0; i < vertices.size(); i++) {
+				if ( vertices.at(i).get_vertex_value() == val ) {
+					index = i;
+				}
+			}
+			return index;
+		}
