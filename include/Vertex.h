@@ -50,7 +50,7 @@ class Vertex{
 		}
 		
 		// Adding an Edge to a Vertex
-		void add_edge( unsigned int destin, int weight ){
+		void add_edge( unsigned int destin, T weight ){
 			
 			// If not, put the edge on the back of the array
 			edges.push_back( Edge(destin, weight) );
@@ -58,7 +58,7 @@ class Vertex{
 		}
 		
 		// Pass the destination, return weight with call be reference, bool if found
-		bool get_edge_value( unsigned int destin, int& weight ) const{
+		bool get_edge_value( unsigned int destin, T& weight ) const{
 			
 			bool edgeFound = false;
 			
@@ -74,7 +74,7 @@ class Vertex{
 		}
 
 		// Pass the destination and weight, bool if found		
-		bool set_edge_value( unsigned int destin, int weight) {
+		bool set_edge_value( unsigned int destin, T weight) {
 			
 			bool edgeFound = false;
 			
