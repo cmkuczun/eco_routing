@@ -13,7 +13,6 @@
 #define GRAPH_H
 
 #include "Vertex.h"
-#include "MSTElem.h"
 #include <stack>
 #include <iostream>
 #include <vector>
@@ -26,8 +25,7 @@
 #define PRIORITY_QUEUE std::priority_queue
 #define UNOR_MAP std::unordered_map
 
-template< typename T, 	// type of elements in adjacency list
-		  typename S >  // type of edge weights
+template< typename T>
 struct Graph{
 	
 	private:
@@ -49,7 +47,7 @@ struct Graph{
 		}
 		
 		// Add Edge from Origin to Destination, with weight
-		void add_edge(unsigned int origin, unsigned int destin, S weight ){
+		void add_edge(unsigned int origin, unsigned int destin, T weight ){
 			if( origin < vertices.size() && destin < vertices.size() ){
 			
 				vertices[origin].add_edge( destin, weight );
@@ -85,7 +83,7 @@ struct Graph{
 		
 		// Return the value with a Call by Reference
 		// bool for if the origin and destination requested were valid
-		bool get_edge_value( const unsigned int origin, const unsigned int destin, S& weight){
+		bool get_edge_value( const unsigned int origin, const unsigned int destin, T& weight){
 				
 			if( origin < vertices.size() && destin < vertices.size() ){
 				
@@ -97,7 +95,7 @@ struct Graph{
 		
 		// Set the value at a given origin and destination 
 		// bool for if the origin and destination requested were valid
-		bool set_edge_value( const unsigned int origin, const unsigned int destin, S weight){
+		bool set_edge_value( const unsigned int origin, const unsigned int destin, T weight){
 				
 			if( origin < vertices.size() && destin < vertices.size() ){
 				
@@ -248,13 +246,13 @@ struct Graph{
     double Vel = velocity*0.44704;
 
     // Rolling Resistance equation
-    double roll = 0.0075 + (3.078*pow(10,-6)*pow(Vel,2);
+    double roll = 0.0075 + (3.078*pow(10,-6)*pow(Vel,2));
 
     // Air drag portion
     double a = ADrag*pow(Vel,2)*dist;
 
     // Rolling Resistance portion
-    double b = (m*g)*(roll/npt)*dist;
+    double b = (mass*g)*(roll/npt)*dist;
 
     // Power portion
     double c = (Ppara/Vel)*dist;
@@ -358,4 +356,6 @@ struct Graph{
 
   }
 
-}
+};
+
+#endif

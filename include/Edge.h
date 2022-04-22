@@ -8,21 +8,20 @@
  *    Email: matt.morrison@nd.edu
  */
 
+
 #ifndef EDGE_H
 #define EDGE_H
 
 struct Edge{
 
-	template <class T>;
+	unsigned int destin;	// Location of edge destination
+	double weight;				// Edge weight (can be negative)
 
-	unsigned int destin;	// Location of Edge Destination
-	T weight;				// Edge Weight. Can be negative.
-
-	// Default Constructor
+	// Default constructor
 	Edge() : destin(), weight( ) {}
 
-	// Overloaded Constructor
-	Edge( unsigned int dest, T weightIn ) : destin(dest), weight(weightIn) {}
+	// Overloaded constructor
+	Edge( unsigned int dest, double weightIn ) : destin(dest), weight(weightIn) {}
 	
 	// Overloaded == operator
 	bool operator==( const Edge& rhs ) const{
