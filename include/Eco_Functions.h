@@ -11,7 +11,7 @@ void parse_input(std::string path, VECTOR< MapElem >& MapElems);
 void create_map(VECTOR <MapElem>& MapElems, Graph<int>& map);
 
 // Powertrain Efficiency function
-double npt(double& velocity);
+double npt(double velocity);
 
 // Total energy consumption function
-double Energy(double& velocity);
+double Energy(double velocity);

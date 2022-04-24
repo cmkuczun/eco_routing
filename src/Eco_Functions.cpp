@@ -50,14 +50,14 @@ void create_map(VECTOR <MapElem>& MapElems, Graph<int>& map) {
 
 // EFFICIENCY & POWER FUNCTIONS (DANI)
   
-double npt(double& velocity){
+double npt(double velocity){
 
     double npt = 0.95 - pow(1.2, (-velocity + (log(0.95)/log(1.2))));
 
     return npt;
 }
 
-double Energy(double& velocity){
+double Energy(double velocity){
 
     double total_energy;
     double dist = 2*1609; // 2 miles converted to meters
