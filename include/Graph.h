@@ -350,12 +350,27 @@ struct Graph{
         std::cout << finalPath.top() << " ";
         finalPath.pop();
       }
-      std::cout << ", and the distance is " << distance[destin] << std::endl;
+      std::cout << ", and the total energy consumption is " << distance[destin] << " kWh." << std::endl;
       std::cout << std::endl;
     }
 
   }
 
+	// Overloaded Operator
+	void print_graph(){
+
+		for( unsigned int iter = 0; iter < this->vertices.size(); iter++ ){
+
+			COUT << iter << ": ";
+			this->vertices[ iter ].print_vertex();
+			COUT << ENDL;
+
+		}
+
+	}
+
 };
+
+
 
 #endif

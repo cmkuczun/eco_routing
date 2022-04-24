@@ -28,5 +28,13 @@ int main(int argc, char* argv[]) {
 
     map.create_map(MapElems);
 
+		map.print_graph();
+
+		double E = map.efficiency(60);
+
+		printf("E = %lf\n", E);
+
+	map.Dijkstra( 1, 4 );
+
 	return 0;
 }
