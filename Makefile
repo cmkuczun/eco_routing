@@ -20,13 +20,16 @@ OBJ := objects
 
 
 # COMMAND: make Eco_Routing
-Eco_RoutingObjs := $(OBJ)/Eco_Routing.o
+Eco_RoutingObjs := $(OBJ)/Eco_Routing.o $(OBJ)/Eco_Functions.o
 
 Eco_Routing: $(Eco_RoutingObjs)
 		$(PP) $(CXXFLAGS) -o $(EXE)/Eco_Routing $(Eco_RoutingObjs)
 
 $(OBJ)/Eco_Routing.o: $(SRC)/Eco_Routing.cpp
 		$(PP) $(CXXFLAGS) -c $(SRC)/Eco_Routing.cpp -o $@
+
+$(OBJ)/Eco_Functions.o: $(SRC)/Eco_Functions.cpp
+		$(PP) $(CXXFLAGS) -c $(SRC)/Eco_Functions.cpp -o $@
 
 
 # COMMAND: make intialize
