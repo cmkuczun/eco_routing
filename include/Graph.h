@@ -201,7 +201,7 @@ struct Graph{
     /* Initialize the origin */
     the_PQ.push( origin );
     distance[origin] = 0;
-    parents[origin] = -1;
+    parents[origin] = (unsigned int) -1;
 
     if( destin == origin ){
       found = true;
@@ -249,7 +249,7 @@ struct Graph{
       unsigned int sentinel = destin;
       finalPath.push( sentinel );		// Push the desination onto the stack
 
-      while( parents[sentinel] != -1 ){
+      while((int) parents[sentinel] != -1 ){
 
         finalPath.push( parents[sentinel] );	// Push the parent onto the stack
         sentinel = parents[sentinel];			// Update the sentinel

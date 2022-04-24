@@ -1,4 +1,4 @@
-#include "./Graph.h"
+#include "Graph.h"
 #include <string.h>
 #include <fstream>
 #include "MapElem.h"
