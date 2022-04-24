@@ -1,6 +1,4 @@
-#include "../include/Graph.h"
-#include "../include/Edge.h"
-#include "../include/Vertex.h"
+#include "./Graph.h"
 #include <string.h>
 #include <fstream>
 #include "MapElem.h"

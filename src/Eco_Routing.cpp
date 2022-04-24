@@ -9,7 +9,7 @@
  */
 
 
-#include "../include/Graph.h"
+#include "../include/Eco_Functions.h"
 
 int main(int argc, char* argv[]) {
 
