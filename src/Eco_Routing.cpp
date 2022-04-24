@@ -20,21 +20,25 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    VECTOR< MapElem > MapElems;
-
+  VECTOR< MapElem > MapElems;
 	Graph<int> map;
 
+	// Create our map
 	parse_input(argv[1], MapElems);
 
-    map.create_map(MapElems);
+  map.create_map(MapElems);
 
-		map.print_graph();
+	map.print_graph();
 
-		double E = map.efficiency(60);
+	// Get user input
 
-		printf("E = %lf\n", E);
+	unsigned int origin = 1;
+	unsigned int destin = 4;
 
-	map.Dijkstra( 1, 4 );
+	// Output result
+	std::cout << "The most energy efficient route to from the location " << origin << " to your destination, location " << destin << ", is: \n";
+
+	map.Dijkstra(1, 4);
 
 	return 0;
 }

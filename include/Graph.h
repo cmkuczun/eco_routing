@@ -344,13 +344,12 @@ struct Graph{
       }
 
       // Stack contains the correct order
-      std::cout << "The valid Dijkstra path from 0 to " << destin << " is: ";
       while( !finalPath.empty() ){
 
-        std::cout << finalPath.top() << " ";
+        std::cout << finalPath.top() << std::endl;
         finalPath.pop();
       }
-      std::cout << ", and the total energy consumption is " << distance[destin] << " kWh." << std::endl;
+      std::cout << "The total energy consumption to your destination is " << distance[destin] << " kWh." << std::endl;
       std::cout << std::endl;
     }
 
