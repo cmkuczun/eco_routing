@@ -14,22 +14,19 @@
 int main(int argc, char* argv[]) {
 
 	printf("<<< Eco Routing Simulation >>> \n");
-	
+
 	if (argc != 2) {
         COUT << "Usage: ./exe/PC07 [filename]" << ENDL;
         return 1;
     }
 
     VECTOR< MapElem > MapElems;
-    
+
 	Graph<int> map;
-	
+
 	parse_input(argv[1], MapElems);
 
-    create_map(MapElems, map);
-
-	double E = Energy(60.0);
-	printf("E = %lf\n", E);
+    map.create_map(MapElems);
 
 	return 0;
 }
