@@ -52,7 +52,7 @@ void create_map(VECTOR <MapElem>& MapElems, Graph<int>& map) {
   
 double npt(double velocity){
 
-    double npt = 0.95 - pow(1.2, (-velocity + (log(0.95)/log(1.2))));
+    double npt = 0.9 - pow(1.3, (-velocity + (log(0.9)/log(1.3))));
 
     return npt;
 }
