@@ -11,12 +11,23 @@
 
 #include "../include/Graph.h"
 
-int main() {
+int main(int argc, char* argv[]) {
 
 	printf("<<< Eco Routing Simulation >>> \n");
 	
-	// initialize adjacency list
-	Graph<int> EcoGraph;
+	if (argc != 2) {
+        COUT << "Usage: ./exe/PC07 [filename]" << ENDL;
+        return 1;
+    }
+
+    VECTOR< MapElem > MapElems;
+    Graph<int> map;
+	
+	parse_input(argv[1], MapElems);
+
+    create_map(MapElems, map);
+
+    map.print_graph();
 
 	return 0;
 }
