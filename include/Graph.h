@@ -18,6 +18,8 @@
 #include <vector>
 #include <queue>
 #include <unordered_map>
+#include <limits> 
+#include <cmath>
 
 #define VECTOR std::vector
 #define STACK std::stack
