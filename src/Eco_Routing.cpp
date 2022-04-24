@@ -28,10 +28,8 @@ int main(int argc, char* argv[]) {
 
     create_map(MapElems, map);
 
-    map.print_graph();
-
-	map.Energy(60);
-
+	double E = Energy(60);
+	printf("E = %lf\n", E);
 
 	return 0;
 }
