@@ -28,7 +28,7 @@ int main(int argc, char* argv[]) {
 
     create_map(MapElems, map);
 
-	double E = Energy(60);
+	double E = Energy(60.0);
 	printf("E = %lf\n", E);
 
 	return 0;
