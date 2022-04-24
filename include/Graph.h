@@ -13,6 +13,7 @@
 #define GRAPH_H
 
 #include "Vertex.h"
+#include "Eco_Functions.h"
 #include <stack>
 #include <iostream>
 #include <vector>

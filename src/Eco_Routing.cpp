@@ -21,13 +21,17 @@ int main(int argc, char* argv[]) {
     }
 
     VECTOR< MapElem > MapElems;
-    Graph<int> map;
+    
+	Graph<int> map;
 	
 	parse_input(argv[1], MapElems);
 
     create_map(MapElems, map);
 
     map.print_graph();
+
+	map.Energy(60);
+
 
 	return 0;
 }
