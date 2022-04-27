@@ -14,32 +14,45 @@
 int main(int argc, char* argv[]) {
 
 	printf("<<< Eco Routing Simulation >>> \n");
+	std::cout << std::endl;
 
 	if (argc != 2) {
         COUT << "Usage: ./exe/PC07 [filename]" << ENDL;
         return 1;
     }
 
+	// Initialize variables
   VECTOR< MapElem > MapElems;
 	Graph<int> map;
+	unsigned int origin, destin;
 
-	// Create our map
+	// Parse input txt file
 	parse_input(argv[1], MapElems);
 
+	// Create our map
   map.create_map(MapElems);
 
-	map.print_graph();
+	// Print Adjacency List
+	// map.print_graph();
 
 	// Get user input
-
-	// Test
-	unsigned int origin = 1;
-	unsigned int destin = 4;
+	printf("Please enter your starting location: ");
+	scanf("%u", &origin);
+	std::cout << std::endl;
+	printf("Please enter your destination location: ");
+	scanf("%u", &destin);
+	std::cout << std::endl;
+	std::cout << "----------------------------------------------------------------------" << std::endl;
+	std::cout << std::endl;
 
 	// Output result
-	std::cout << "The most energy efficient route to from the location " << origin << " to your destination, location " << destin << ", is: \n";
+	std::cout << "The most energy efficient route to from location " << origin << " to location " << destin << " is: \n";
 
-	map.Dijkstra(1, 4);
+	std::cout << std::endl;
+
+	// Find Most Energy Efficieny Route
+	map.Dijkstra(origin, destin);
 
 	return 0;
+
 }
